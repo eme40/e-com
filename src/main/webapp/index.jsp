@@ -11,7 +11,7 @@
         request.setAttribute("auth", auth);
     }
     ProductDao pd = new ProductDao(DbCon.getConnection());
-    List<Product> products = pd.getAllProduct();
+    List<Product> products = pd.getAllProducts();
 
     ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
     if (cart_list != null){
