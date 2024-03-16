@@ -49,6 +49,21 @@ public class ProductDao {
         }
         return book;
     }
+    public boolean addProduct(Product product) {
+        try {
+            query = "INSERT INTO products (name, category, price, image) VALUES (?, ?, ?, ?)";
+            pst = this.con.prepareStatement(query);
+            pst.setString(1, product.getName());
+            pst.setString(2, product.getCategory());
+            pst.setDouble(3, product.getPrice());
+            pst.setString(4, product.getImage());
+            int rowCount = pst.executeUpdate();
+            return rowCount > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
 
     public Product getSingleProduct(int id) {

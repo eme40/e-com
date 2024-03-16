@@ -31,7 +31,7 @@ public class AddtoCartServlet extends HttpServlet {
            if (cart_List == null){
                cartList.add(cm);
                session.setAttribute("cart-list",cartList);
-               response.sendRedirect("index.jsp");
+               response.sendRedirect("product.jsp");
            }
            else{
                cartList = cart_List;
@@ -45,7 +45,7 @@ public class AddtoCartServlet extends HttpServlet {
                }
                if (!exist){
                    cartList.add(cm);
-                   response.sendRedirect("index.jsp");
+                   response.sendRedirect("product.jsp");
 
                }
            }
